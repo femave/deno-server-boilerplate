@@ -6,4 +6,4 @@ export const getUser = (ctx: any) => {
 export const user = (router: any) => {
   router
       .get("/user", getUser)
-}
+};

@@ -6,4 +6,4 @@ export const hello = (ctx: any) => {
 export const helloWorld = (router: any) => {
     router
         .get("/", hello)
-}
+};
