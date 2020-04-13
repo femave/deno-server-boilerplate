@@ -3,14 +3,17 @@ import { APP_PORT } from "./config.ts";
 import notFound from "./handlers/not-found.ts";
 import errorMiddleware from "./middlewares/error.ts";
 import {apiRrouter, configRouter} from './routes/routes.ts';
+import dbConnection from "./db-connection.ts";
+
 
 const app = new Application();
+
+await dbConnection();
 
 app.use(errorMiddleware);
 
 app.use(apiRrouter.routes());
 app.use(apiRrouter.allowedMethods());
-
 
 app.use(configRouter.routes());
 app.use(configRouter.allowedMethods());
