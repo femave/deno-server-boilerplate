@@ -1,15 +1,21 @@
 import { Router } from "https://deno.land/x/oak/mod.ts";
-import getUser from "./user/handlers/get-user.ts";
+import { getUser, addUser } from "./user/index.ts";
+import { login } from './login/index.ts';
 
 
 export const apiRrouter = new Router();
 
+// USER ROUTES
 apiRrouter
     // .get('/api/users', getUserList)
     .get('/api/user/:userId', getUser)
-    // .post('/api/user/:userId', addUser)
+    .post('/api/user', addUser)
     // .put('/api/user/:userId', modifyUser)
     // .delete('/api/user/:userId', deleteUser)
+
+// LOGIN ROUTES
+apiRrouter
+    .post('/api/login', login)
 
 
 

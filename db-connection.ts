@@ -1,12 +1,19 @@
 import { init, MongoClient } from "https://deno.land/x/mongo@v0.5.2/mod.ts";
 import { DB_PATH } from './config.ts';
 
-export default async function dbConnection() {
-    const starting = init();
-    console.log(await starting)
+export default class MongoConnection {
+    public client = new MongoClient();
 
-    const client = new MongoClient();
-    client.connectWithUri(DB_PATH);
-    console.log('=== CONNECTED TO DB ===')
+    constructor() {}
+    
+    async dbConnection() {
+        await init();
+        this.client.connectWithUri(DB_PATH);
+        console.log('=== CONNECTED TO DB ===')
+    }
+    
+    get getClient() {
+        return this.client;
+    }    
 
 }

@@ -1,9 +1,12 @@
-import { Response } from "https://deno.land/x/oak/mod.ts";
+import { Response, Request } from 'https://deno.land/x/oak/mod.ts';
+import { Users, IUser } from "../models/User.ts";
 
-export default async function getUser ({ response }: { response: Response }) {
+export async function getUser ({ request, response }: { request: Request, response: Response }) {
     try {
-        response.body = 'hello user';
+        const username = request.path.split('/')[3];
+        const user = Users.findOne({username})
+        response.body = await user || 'User not found';
     } catch (err) {
-        console.error(err.message);
+        console.error('error');
     }
 }

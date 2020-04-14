@@ -3,12 +3,13 @@ import { APP_PORT } from "./config.ts";
 import notFound from "./handlers/not-found.ts";
 import errorMiddleware from "./middlewares/error.ts";
 import {apiRrouter, configRouter} from './routes/routes.ts';
-import dbConnection from "./db-connection.ts";
+import MongoConnection from './db-connection.ts';
 
 
 const app = new Application();
+const mongoDb = new MongoConnection();
 
-await dbConnection();
+mongoDb.dbConnection();
 
 app.use(errorMiddleware);
 
