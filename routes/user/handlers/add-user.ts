@@ -3,7 +3,7 @@ import { Users, IUser } from "../models/User.ts";
 
 export async function addUser({request, response}: {request: Request, response: Response}) {
     try {
-        const body: IUser = await (await request.body()).value;
+        const body: IUser = (await request.body()).value;
         const userExist: Promise<IUser> = await Users.findOne({username: body.username});
 
         if(!!userExist) {
@@ -11,7 +11,8 @@ export async function addUser({request, response}: {request: Request, response: 
         } else {
             const user = await Users.insertOne({
                 username: body.username,
-                password: body.password
+                password: body.password,
+                _isUserDeleted: false
             });
             response.body = user;
         }

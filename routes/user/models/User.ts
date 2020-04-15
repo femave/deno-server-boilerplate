@@ -7,5 +7,6 @@ export const Users = db.collection("users");
 
 export interface IUser {
     username: string;
-    password: string
+    password: string;
+    _isUserDeleted: boolean;
 }
