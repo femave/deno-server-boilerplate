@@ -1,4 +1,4 @@
-import { init, MongoClient } from "https://deno.land/x/mongo@v0.5.2/mod.ts";
+import { init, MongoClient } from "./deps.ts";
 import { DB_PATH } from './config.ts';
 
 export default class MongoConnection {

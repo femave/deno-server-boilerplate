@@ -1,6 +1,5 @@
 
-import validateJwt from "https://deno.land/x/djwt/validate.ts";
-import { Request } from 'https://deno.land/x/oak/mod.ts';
+import { validateJwt, Request } from "../deps.ts";
 import { SECRET } from "../config.ts";
 
 export default async function authenticate({ request }: {request: Request}, next: any) {

@@ -11,7 +11,8 @@ The idea is to use Deno create a https server boilerplate with connection to Mon
 - [Deno](https://deno.land/)
 - [oak](https://github.com/oakserver/oak/) - Web framework for Deno
 - [dotenv](https://deno.land/x/dotenv/dotenv.ts) - For env variables
-<!-- - [dotenv](https://deno.land/x/djwt) - Token generation -->
+- [djwt](https://deno.land/x/djwt) - Token generation
+- [mongo](https://deno.land/x/mongo@v0.5.2/) - Connection for MongoDB
 
 ## Automatic reload
 

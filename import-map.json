@@ -1,0 +1,7 @@
+{
+    "imports": {
+       "oak/": "https://deno.land/x/oak/",
+       "mongo/": "https://deno.land/x/mongo@v0.5.2/",
+       "djwt/": "https://deno.land/x/djwt/"
+    }
+ }

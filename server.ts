@@ -1,4 +1,4 @@
-import { Application } from "https://deno.land/x/oak/mod.ts";
+import { Application } from "./deps.ts";
 import { APP_PORT } from "./config.ts";
 import notFound from "./handlers/not-found.ts";
 import errorMiddleware from "./middlewares/error.ts";

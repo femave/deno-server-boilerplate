@@ -1,9 +1,4 @@
-import { Response, Request } from 'https://deno.land/x/oak/mod.ts';
-import makeJwt, {
-  setExpiration,
-  Jose,
-  Payload,
-} from "https://deno.land/x/djwt/create.ts"
+import { Request, Response, makeJwt, setExpiration, Jose, Payload } from '../../../deps.ts';
 import { Users } from '../../user/models/User.ts';
 import { SECRET } from '../../../config.ts';
 

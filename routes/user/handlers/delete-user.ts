@@ -1,4 +1,4 @@
-import { Response, Request, Context } from 'https://deno.land/x/oak/mod.ts';
+import { Request, Response } from '../../../deps.ts';
 import { Users, IUser } from "../models/User.ts";
 
 export async function deleteUser ({ request, response }: { request: Request, response: Response }): Promise<void> {
